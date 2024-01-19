@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&display=swap');
+
+body {
+    font-family: 'Josefin Sans';
+}
+
+img{
+   border-radius: 50%;/*to make the img round like a profile pic*/
+   width:100px;
+   height:100px;
+   position:absolute;/*absolute means img is out of the normal
+                      flow other element may not be aware of its position*/
+   border:solid rgb(255,255,255);/*white border*/
+}
+
+.background{
+ background-color:aqua;
+ height:40%;/*from top 0% till 40% just above the mid point of 50%*/
+}
+
+.image{/*img class*/
+  position:relative;/*used to move an element based on its original position*/
+  left:35%;/*use live server to visualize in realtime*/
+  top:22%;
+}

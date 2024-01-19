@@ -33,6 +33,10 @@ function CountRenderer() {
 function EvenCountRenderer() {
   const isEven = useRecoilValue(evenSelector);
 
+  const isEven=useMemo(()=>{
+    return count%2==0;
+  },[count]);
+  
   return <div>
     {isEven ? "It is even" : null}
   </div>

@@ -8,9 +8,9 @@ export const countAtom = atom({
 //selector declaration
 export const evenSelector = selector({ //like useMemo()
     key: "evenSelector",
-    get: ({get}) => {
+    get: (props) => {
         //logic of dependency
-        const count = get(countAtom);
+        const count = props.get(countAtom);
         return count % 2;
     }
 });
