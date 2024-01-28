@@ -1,8 +1,15 @@
 const rootRouter=require("./routes/index");
 const express = require("express");
+const mongoose = require('mongoose');
 const cors=require('cors');//used because frontend and backend are in different urls
 
 const app=express();
+
+mongoose.connect(uri, {
+    useNewUrlParser: true,      // Deprecated (optional)
+    useUnifiedTopology: true,   // Deprecated (optional)
+    useCreateIndex: true,       // Deprecated (optional)
+  });
 
 app.use(cors());//cors middleware
 app.use(express.json());
@@ -11,7 +18,7 @@ app.use(express.json());
 
 app.use("/api/v1",rootRouter);//for better structuring of express apps we use 2 things in the middleware
 
-const port=3000;
+const port=7770;
 
 app.listen(port);//Express Server running and listening at port ${port}
 

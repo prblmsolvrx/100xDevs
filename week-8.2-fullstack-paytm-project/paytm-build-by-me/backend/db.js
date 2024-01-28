@@ -5,9 +5,6 @@ const dbName='DB-1';
 //connection URI
 const uri='mongodb+srv://prblmsolvrx:2ugqrytPpKpV2x3l@paytm-cluster.6xqmqwl.mongodb.net/${DB-1}'
 
-//Connect to MongoDB
-mongoose.connect(uri,{useNewUrlParser:true,useUnifiedTopology:true});
-
 //get default connection
 const db=mongoose.connection;
 
