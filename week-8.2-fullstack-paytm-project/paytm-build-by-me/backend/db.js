@@ -1,28 +1,7 @@
-const mongoose=require('mongoose');
+// backend/db.js
+const mongoose = require('mongoose');
 
-const dbName='DB-1';
-
-//connection URI
-const uri='mongodb+srv://prblmsolvrx:2ugqrytPpKpV2x3l@paytm-cluster.6xqmqwl.mongodb.net/${DB-1}'
-
-//get default connection
-const db=mongoose.connection;
-
-//Event Handling for successful connection
-db.on('connected',()=>{
-    console.log('Connected to MongoDB at ${uri}');
-});
-
-//Event Handling for connection error
-db.on('error',(err)=>{
-    console.error('MongoDB connection error: ${err}');
-});
-
-db.on('disconnected',()=>{
-    console.log('MongoDB disconnected');
-});
-
-
+mongoose.connect("mongodb://localhost:3000/paytm")
 
 //defining schema for users collection
 const userSchema=new mongoose.Schema({

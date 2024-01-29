@@ -3,13 +3,14 @@ const express = require("express");
 const mongoose = require('mongoose');
 const cors=require('cors');//used because frontend and backend are in different urls
 
-const app=express();
-
+// Replace "your_database_name" with your actual database name
+const uri = "mongodb://localhost:27017/PayTM";
 mongoose.connect(uri, {
-    useNewUrlParser: true,      // Deprecated (optional)
-    useUnifiedTopology: true,   // Deprecated (optional)
-    useCreateIndex: true,       // Deprecated (optional)
-  });
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+const app=express();
 
 app.use(cors());//cors middleware
 app.use(express.json());
@@ -18,7 +19,7 @@ app.use(express.json());
 
 app.use("/api/v1",rootRouter);//for better structuring of express apps we use 2 things in the middleware
 
-const port=7770;
+const port=3000;
 
 app.listen(port);//Express Server running and listening at port ${port}
 
