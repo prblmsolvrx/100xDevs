@@ -4,7 +4,7 @@
 const mongoose = require('mongoose');
 
 // Connecting to the local MongoDB server with the 'paytm' database
-mongoose.connect('mongodb+srv://prblmsolvrx:2ugqrytPpKpV2x3l@paytm-cluster.6xqmqwl.mongodb.net/')
+mongoose.connect('mongodb+srv://prblmsolvrx:2ugqrytPpKpV2x3l@paytm-cluster.6xqmqwl.mongodb.net')
 
 // Creating a Schema for Users with various constraints and validations
 const userSchema = new mongoose.Schema({
