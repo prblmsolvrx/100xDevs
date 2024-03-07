@@ -1,0 +1,16 @@
+npm publish --access=public
+
+When you run npm publish --access=public,
+you are publishing a package to the npm
+registry with public access. This means
+that anyone can install your package using
+npm install your-package-name. Public packages
+are visible to everyone and can be searched
+for and installed by anyone using npm. This
+is in contrast to private packages, which
+require authentication to access and are not
+listed in the public registry.
+
+
+
+

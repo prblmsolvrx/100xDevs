@@ -1,0 +1,28 @@
+To connect your Windows machine to an AWS EC2 instance running Ubuntu, you can use the following steps:
+
+Get the Public IP of your EC2 Instance:
+
+Log in to your AWS Management Console.
+Go to the EC2 dashboard and select your instance.
+Note down the Public IPv4 address of your instance.
+Use SSH Client (PuTTY):
+
+Download and install PuTTY from the official website if you haven't already.
+Convert Your Private Key (if necessary):
+
+If your private key is in .pem format, you'll need to convert it to a .ppk file for use with PuTTY.
+Open PuTTYgen (comes with PuTTY).
+Click "Load" and select your .pem private key file.
+Click "Save private key" to save it in .ppk format.
+Configure PuTTY:
+
+Open PuTTY and enter the Public IP of your EC2 instance into the "Host Name (or IP address)" field.
+In the left pane, go to Connection -> SSH -> Auth.
+Click "Browse" and select your .ppk private key file.
+Go back to the Session category, enter a name for your session in "Saved Sessions," and click "Save."
+Connect to Your EC2 Instance:
+
+Click "Open" to start the SSH session.
+If this is your first time connecting to the instance, you may see a security alert. Click "Yes" to continue.
+You should now be logged in to your EC2 instance as the default user (usually ubuntu for Ubuntu instances).
+That's it! You should now be connected to your AWS EC2 instance from your Windows machine using PuTTY.

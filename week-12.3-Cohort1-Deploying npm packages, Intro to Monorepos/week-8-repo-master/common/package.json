@@ -1,0 +1,16 @@
+{
+  "name": "@100xdevs/common",
+  "version": "1.0.9",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@100xdevs/common": "^1.0.2",
+    "zod": "^3.21.4"
+  }
+}

@@ -1,0 +1,2 @@
+ssh -i backend-aws-deployment.ppk ubuntu@public-IP
+chmod 700 backend-aws-deployment.pem - if the instance is of linux/ubuntu
