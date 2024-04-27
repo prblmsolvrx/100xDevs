@@ -26,6 +26,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+//websocket code using http
 const http_1 = __importDefault(require("http"));
 const ws_1 = __importStar(require("ws"));
 const server = http_1.default.createServer(function (request, response) {
