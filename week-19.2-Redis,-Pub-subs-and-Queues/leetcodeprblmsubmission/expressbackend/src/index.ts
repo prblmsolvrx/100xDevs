@@ -4,7 +4,7 @@ import { createClient } from "redis";
 const app = express();
 app.use(express.json());
 
-const client = createClient();
+const client = createClient();//redis client
 client.on('error', (err) => console.log('Redis Client Error', err));
 
 app.post("/submit", async (req, res) => {

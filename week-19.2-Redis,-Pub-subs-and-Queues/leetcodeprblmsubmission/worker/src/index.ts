@@ -1,5 +1,5 @@
 import { createClient } from "redis";
-const client = createClient();
+const client = createClient();//redis client
 
 async function processSubmission(submission: string) {
     const { problemId, code, language } = JSON.parse(submission);
