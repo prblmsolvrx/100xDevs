@@ -144,5 +144,5 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
-node_modules
 # End of https://mrkandreev.name/snippets/gitignore-generator/#Git,Web,Node
+node_modules
