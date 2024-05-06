@@ -1,0 +1,1 @@
+https://medium.com/@tericcabrel/document-a-node-js-rest-api-with-swagger-and-open-api-d86145f9754d
