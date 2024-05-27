@@ -1,0 +1,97 @@
+This is an example of an SDP (Session Description Protocol) message. SDP is used in multimedia communication to describe multimedia sessions and initiate, modify, and terminate those sessions. It is often used in WebRTC (Web Real-Time Communication) to establish peer-to-peer connections. Here's a detailed breakdown of the provided SDP message:
+
+### Version
+
+**v=0**:
+- **v=**: Version field.
+- **0**: Indicates the version of SDP being used. "0" is the current version.
+
+### Origin
+
+**o=- 423904492236154649 2 IN IP4 127.0.0.1**:
+- **o=**: Origin field, which provides information about the session's originator and identifiers.
+- **-**: Username, here it is omitted (represented by a dash).
+- **423904492236154649**: Session ID, a unique identifier for the session.
+- **2**: Session version, incremented if the session is modified.
+- **IN**: Network type (Internet).
+- **IP4**: Address type (IPv4).
+- **127.0.0.1**: IP address of the machine that created the session.
+
+### Session Name
+
+**s=-**:
+- **s=**: Session name field.
+- **-**: The session name is omitted (represented by a dash).
+
+### Timing
+
+**t=0 0**:
+- **t=**: Time field.
+- **0 0**: The time the session is active. `0 0` means the session is not bound by specific start and stop times, indicating the session is permanent.
+
+### Media Description
+
+**m=audio 49170 RTP/AVP 0**:
+- **m=**: Media description field.
+- **audio**: Specifies the type of media (audio in this case).
+- **49170**: Port number where the audio media will be sent.
+- **RTP/AVP**: Indicates that the media will use RTP (Real-time Transport Protocol) with the Audio/Video Profile.
+- **0**: Payload type, where `0` corresponds to the PCMU codec.
+
+### Connection Information
+
+**c=IN IP4 192.168.1.101**:
+- **c=**: Connection information field.
+- **IN**: Network type (Internet).
+- **IP4**: Address type (IPv4).
+- **192.168.1.101**: IP address where the media stream will be sent.
+
+### Media Attributes
+
+**a=rtpmap:0 PCMU/8000**:
+- **a=**: Attribute field.
+- **rtpmap:0**: Maps RTP payload type `0` to a specific codec.
+- **PCMU/8000**: Specifies that payload type `0` uses the PCMU codec with a sampling rate of 8000 Hz.
+
+**a=ice-options:trickle**:
+- **a=**: Attribute field.
+- **ice-options:trickle**: Indicates ICE (Interactive Connectivity Establishment) options, where "trickle" means that ICE candidates can be sent incrementally rather than all at once.
+
+### ICE Candidates
+
+**a=candidate:1 1 UDP 2122260223 192.168.1.101 49170 typ host**:
+- **a=**: Attribute field.
+- **candidate:1 1**: Candidate ID and component ID.
+- **UDP**: Transport protocol.
+- **2122260223**: Priority value.
+- **192.168.1.101 49170**: IP address and port of the candidate.
+- **typ host**: Indicates that this candidate is a host candidate (a direct connection).
+
+**a=candidate:2 1 UDP 2122194687 10.0.1.1 49171 typ host**:
+- **a=**: Attribute field.
+- **candidate:2 1**: Another host candidate.
+- **UDP**: Transport protocol.
+- **2122194687**: Priority value.
+- **10.0.1.1 49171**: IP address and port of the candidate.
+- **typ host**: Indicates that this candidate is also a host candidate.
+
+**a=candidate:3 1 UDP 1685987071 93.184.216.34 49172 typ srflx raddr 10.0.1.1 rport 49171**:
+- **a=**: Attribute field.
+- **candidate:3 1**: Candidate ID and component ID.
+- **UDP**: Transport protocol.
+- **1685987071**: Priority value.
+- **93.184.216.34 49172**: IP address and port of the candidate.
+- **typ srflx**: Indicates that this candidate is a server reflexive candidate (used to traverse NAT).
+- **raddr 10.0.1.1 rport 49171**: Related address and port (private IP and port from which the public address was derived).
+
+**a=candidate:4 1 UDP 41819902 10.1.1.1 3478 typ relay raddr 93.184.216.34 rport 49172**:
+- **a=**: Attribute field.
+- **candidate:4 1**: Candidate ID and component ID.
+- **UDP**: Transport protocol.
+- **41819902**: Priority value.
+- **10.1.1.1 3478**: IP address and port of the candidate.
+- **typ relay**: Indicates that this candidate is a relayed candidate (using a TURN server).
+- **raddr 93.184.216.34 rport 49172**: Related address and port (public IP and port related to the relayed candidate).
+
+### Summary
+This SDP message describes an audio session using the PCMU codec with a sampling rate of 8000 Hz. It includes various ICE candidates to establish the connection, ranging from direct host candidates to NAT-traversing server reflexive candidates and a TURN server relayed candidate. The message outlines the parameters necessary for initiating and managing the audio session over the network.
